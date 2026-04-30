@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Real Seller Shop</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Real Seller Shop</title>
 
 <style>
 
+/* ===== GLOBAL ===== */
 body{
     margin:0;
     font-family:Arial;
@@ -14,7 +15,7 @@ body{
     color:white;
 }
 
-/* ===== SPLASH ===== */
+/* ===== SPLASH SCREEN ===== */
 #splash{
     position:fixed;
     top:0;
@@ -26,24 +27,28 @@ body{
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    z-index:99999;
+    z-index:9999;
+    animation: hideSplash 3s forwards;
 }
 
 #splash img{
-    width:170px;
-    height:170px;
+    width:160px;
+    height:160px;
     border-radius:50%;
     border:4px solid #00bfff;
-    box-shadow:0 0 25px #00bfff;
-    animation:zoomIn 1.5s ease-in-out;
+    box-shadow:0 0 20px #00bfff;
+    animation: zoomIn 1.5s ease-in-out;
 }
 
 #splash h1{
     margin-top:15px;
+    color:white;
     font-size:26px;
-    animation:glow 1.2s infinite alternate;
+    letter-spacing:3px;
+    animation: glow 1.2s infinite alternate;
 }
 
+/* ===== ANIMATIONS ===== */
 @keyframes zoomIn{
     from{transform:scale(0);opacity:0;}
     to{transform:scale(1);opacity:1;}
@@ -51,41 +56,55 @@ body{
 
 @keyframes glow{
     from{text-shadow:0 0 5px #00bfff;}
-    to{text-shadow:0 0 25px #00bfff;}
+    to{text-shadow:0 0 20px #00bfff,0 0 40px #00bfff;}
 }
 
-/* HEADER */
+@keyframes hideSplash{
+    0%{opacity:1;}
+    80%{opacity:1;}
+    100%{opacity:0;visibility:hidden;}
+}
+
+/* ===== HEADER ===== */
 header{
     background:#102a5c;
-    padding:12px;
+    padding:15px;
     display:flex;
     justify-content:space-between;
+    align-items:center;
 }
 
-/* CONTAINER */
+/* ===== HERO ===== */
+.hero{
+    padding:20px;
+    text-align:center;
+    background:linear-gradient(90deg,#102a5c,#0b1b3a);
+}
+
+/* ===== PRODUCTS ===== */
 .container{
     width:90%;
     margin:auto;
 }
 
-/* PRODUCTS */
 .products{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
     gap:15px;
-    margin-top:10px;
+    margin-top:20px;
 }
 
 .card{
     background:#102a5c;
-    padding:10px;
-    border-radius:12px;
+    padding:15px;
+    border-radius:15px;
     text-align:center;
     transition:0.3s;
 }
 
 .card:hover{
     transform:scale(1.05);
+    background:#163a7a;
 }
 
 .card img{
@@ -93,20 +112,36 @@ header{
     border-radius:10px;
 }
 
-button{
-    padding:8px;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
+.price{
+    color:#00ff88;
+    font-weight:bold;
 }
 
-/* CART */
-#cartBox{
-    display:none;
-    background:#0f2b5a;
-    padding:10px;
-    margin-top:10px;
+button,a{
+    display:block;
+    margin-top:8px;
+    padding:8px;
+    border:none;
     border-radius:10px;
+    cursor:pointer;
+    text-decoration:none;
+}
+
+button{
+    background:#ffcc00;
+}
+
+.order{
+    background:#25D366;
+    color:white;
+}
+
+/* ===== CART ===== */
+footer{
+    text-align:center;
+    padding:15px;
+    background:#102a5c;
+    margin-top:20px;
 }
 
 </style>
@@ -114,87 +149,65 @@ button{
 
 <body>
 
-<!-- SPLASH -->
+<!-- ===== SPLASH SCREEN ===== -->
 <div id="splash">
     <img src="https://raw.githubusercontent.com/Realsellershop/RealSellershop/main/WhatsApp%20Image%202026-05-01%20at%201.05.09%20AM.jpeg">
     <h1>CEO JALAL</h1>
 </div>
 
+<!-- ===== HEADER ===== -->
 <header>
-<h3>Real Seller Shop</h3>
-<button onclick="showCart()">🛒 Cart</button>
+    <h2>Real Seller Shop</h2>
+    <span>M JALAL</span>
 </header>
 
+<!-- ===== HERO ===== -->
+<div class="hero">
+    <h2>Welcome To My Store</h2>
+    <p>High quality products at lowest prices</p>
+</div>
+
+<!-- ===== PRODUCTS ===== -->
 <div class="container">
 
-<div class="products" id="productList">
+<div class="products">
 
     <div class="card">
         <img src="https://via.placeholder.com/200">
         <h3>Smart Watch</h3>
-        <p>Rs 2499</p>
-        <button onclick="addCart('Smart Watch')">Add</button>
+        <p class="price">Rs. 2499</p>
+        <button onclick="add('Smart Watch')">Add to Cart</button>
+        <a class="order" href="https://wa.me/923195363123?text=Order Smart Watch">Order</a>
     </div>
 
     <div class="card">
         <img src="https://via.placeholder.com/200">
         <h3>Headphones</h3>
-        <p>Rs 3999</p>
-        <button onclick="addCart('Headphones')">Add</button>
+        <p class="price">Rs. 3999</p>
+        <button onclick="add('Headphones')">Add to Cart</button>
+        <a class="order" href="https://wa.me/923195363123?text=Order Headphones">Order</a>
     </div>
 
     <div class="card">
         <img src="https://via.placeholder.com/200">
         <h3>Speaker</h3>
-        <p>Rs 1799</p>
-        <button onclick="addCart('Speaker')">Add</button>
+        <p class="price">Rs. 1799</p>
+        <button onclick="add('Speaker')">Add to Cart</button>
+        <a class="order" href="https://wa.me/923195363123?text=Order Speaker">Order</a>
     </div>
 
 </div>
 
-<!-- CART -->
-<div id="cartBox">
-<h3>🛒 Cart</h3>
-<ul id="cartItems"></ul>
-<button onclick="checkout()">WhatsApp Checkout</button>
 </div>
 
-</div>
+<footer>
+    © 2026 Real Seller Shop | M JALAL
+</footer>
 
 <script>
 
-/* SPLASH OFF */
-setTimeout(()=>{
-    document.getElementById("splash").style.display="none";
-},3000);
-
-/* CART */
-let cart=[];
-
-/* ADD CART */
-function addCart(item){
-    cart.push(item);
-    alert(item+" added!");
-}
-
-/* SHOW CART */
-function showCart(){
-    document.getElementById("cartBox").style.display="block";
-
-    let list=document.getElementById("cartItems");
-    list.innerHTML="";
-
-    cart.forEach(i=>{
-        let li=document.createElement("li");
-        li.innerText=i;
-        list.appendChild(li);
-    });
-}
-
-/* CHECKOUT */
-function checkout(){
-    let msg="Order: "+cart.join(",");
-    window.open("https://wa.me/923195363123?text="+msg);
+function add(product){
+    alert(product + " added to cart!");
 }
 
 </script>
