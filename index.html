@@ -9,141 +9,172 @@
 body{
     margin:0;
     font-family:Arial;
-    background:#ffffff;
+    background:#eef2f3;
+    transition:0.3s;
 }
 
-/* HEADER */
-header{
-    text-align:center;
-    padding:20px;
-    border-bottom:1px solid #ddd;
-}
-header h1{
-    margin:0;
-}
-nav a{
-    margin:0 10px;
-    text-decoration:none;
-    color:black;
+/* DARK MODE */
+.dark{
+    background:#111;
+    color:white;
 }
 
-/* HERO */
-.hero{
-    text-align:center;
-    padding:40px 20px;
-}
-.hero h2{
-    font-size:28px;
-}
-
-/* OWNER */
-.owner{
-    text-align:center;
-    padding:20px;
-}
-.owner img{
-    width:100px;
-    height:100px;
-    border-radius:50%;
-}
-
-/* POSTS STYLE (WordPress jaisa) */
-.posts{
-    max-width:800px;
+/* CONTAINER */
+.container{
+    width:90%;
     margin:auto;
     padding:20px;
 }
 
-.post{
-    border-bottom:1px solid #ddd;
-    padding:20px 0;
+/* HEADER */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
-.post img{
+button{
+    padding:8px 15px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+/* SLIDER */
+.slider{
+    margin-top:20px;
+    height:200px;
+    border-radius:20px;
+    background-size:cover;
+    background-position:center;
+    transition:0.5s;
+}
+
+/* PRODUCTS */
+.products{
+    display:flex;
+    gap:15px;
+    margin-top:20px;
+}
+
+.card{
+    flex:1;
+    background:white;
+    padding:15px;
+    border-radius:15px;
+    text-align:center;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:scale(1.05);
+    box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card img{
     width:100%;
-    border-radius:5px;
-}
-
-.title{
-    font-size:20px;
-    margin:10px 0;
+    border-radius:10px;
 }
 
 .price{
-    color:#e60023;
+    color:green;
     font-weight:bold;
 }
 
 .order{
-    display:inline-block;
+    display:block;
     margin-top:10px;
-    padding:8px 15px;
+    padding:8px;
     background:#25D366;
     color:white;
     text-decoration:none;
-    border-radius:5px;
+    border-radius:10px;
 }
 
-/* FOOTER */
-footer{
-    text-align:center;
-    padding:20px;
-    border-top:1px solid #ddd;
-    margin-top:30px;
+/* CART */
+.cart{
+    margin-top:20px;
+    padding:15px;
+    background:white;
+    border-radius:15px;
 }
 </style>
 </head>
 
 <body>
 
+<div class="container">
+
 <header>
-    <h1>Real Seller Shop</h1>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Shop</a>
-        <a href="#">Contact</a>
-    </nav>
+    <h2>Real Seller Shop</h2>
+    <button onclick="toggleDark()">🌙 Dark Mode</button>
 </header>
 
-<div class="hero">
-    <h2>Best Online Store in Pakistan</h2>
-    <p>Fast Delivery | Trusted Seller</p>
-</div>
+<div class="slider" id="slider"></div>
 
-<div class="owner">
-    <img src="https://via.placeholder.com/100">
-    <h3>M JALAL</h3>
-    <p>📞 03195363123</p>
-</div>
+<div class="products">
 
-<div class="posts">
-
-    <div class="post">
-        <img src="https://via.placeholder.com/600x300">
-        <div class="title">Wireless Earbuds</div>
-        <div class="price">Rs. 2,499</div>
-        <a class="order" href="https://wa.me/923195363123?text=Order Wireless Earbuds Rs 2499">Order Now</a>
+    <div class="card">
+        <img src="https://via.placeholder.com/200">
+        <h3>Headphones</h3>
+        <p class="price">Rs. 3999</p>
+        <button onclick="addToCart('Headphones')">Add to Cart</button>
+        <a class="order" href="https://wa.me/923195363123?text=Order Headphones">Order</a>
     </div>
 
-    <div class="post">
-        <img src="https://via.placeholder.com/600x300">
-        <div class="title">Mini Bluetooth Speaker</div>
-        <div class="price">Rs. 1,799</div>
-        <a class="order" href="https://wa.me/923195363123?text=Order Mini Speaker Rs 1799">Order Now</a>
+    <div class="card">
+        <img src="https://via.placeholder.com/200">
+        <h3>Smart Watch</h3>
+        <p class="price">Rs. 2499</p>
+        <button onclick="addToCart('Smart Watch')">Add to Cart</button>
+        <a class="order" href="https://wa.me/923195363123?text=Order Watch">Order</a>
     </div>
 
-    <div class="post">
-        <img src="https://via.placeholder.com/600x300">
-        <div class="title">LED Night Lamp</div>
-        <div class="price">Rs. 999</div>
-        <a class="order" href="https://wa.me/923195363123?text=Order LED Lamp Rs 999">Order Now</a>
+    <div class="card">
+        <img src="https://via.placeholder.com/200">
+        <h3>Speaker</h3>
+        <p class="price">Rs. 1799</p>
+        <button onclick="addToCart('Speaker')">Add to Cart</button>
+        <a class="order" href="https://wa.me/923195363123?text=Order Speaker">Order</a>
     </div>
 
 </div>
 
-<footer>
-    © 2026 Real Seller Shop
-</footer>
+<div class="cart">
+    <h3>🛒 Cart Items:</h3>
+    <ul id="cartList"></ul>
+</div>
+
+</div>
+
+<script>
+
+/* DARK MODE */
+function toggleDark(){
+    document.body.classList.toggle("dark");
+}
+
+/* SLIDER */
+let images = [
+ "https://via.placeholder.com/800x200",
+ "https://via.placeholder.com/800x200/ff0000",
+ "https://via.placeholder.com/800x200/0000ff"
+];
+
+let i = 0;
+setInterval(()=>{
+    document.getElementById("slider").style.backgroundImage = `url(${images[i]})`;
+    i = (i+1)%images.length;
+},2000);
+
+/* CART */
+function addToCart(product){
+    let li = document.createElement("li");
+    li.textContent = product;
+    document.getElementById("cartList").appendChild(li);
+}
+
+</script>
 
 </body>
 </html>
