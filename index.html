@@ -2,20 +2,91 @@
 <html>
 <head>
     <title>AJ Winkle Store</title>
+    <style>
+        body{
+            font-family: Arial;
+            margin:0;
+            background:#f4f4f4;
+        }
+        header{
+            background:#111;
+            color:white;
+            padding:20px;
+            text-align:center;
+        }
+        .hero{
+            padding:40px;
+            text-align:center;
+            background:white;
+        }
+        .btn{
+            background:red;
+            color:white;
+            padding:10px 20px;
+            text-decoration:none;
+            border-radius:5px;
+        }
+        .products{
+            display:flex;
+            justify-content:center;
+            flex-wrap:wrap;
+            padding:20px;
+        }
+        .card{
+            background:white;
+            margin:10px;
+            padding:15px;
+            width:200px;
+            border-radius:10px;
+            box-shadow:0px 0px 10px #ccc;
+            text-align:center;
+        }
+        footer{
+            background:#111;
+            color:white;
+            text-align:center;
+            padding:10px;
+            margin-top:20px;
+        }
+    </style>
 </head>
-<body style="text-align:center;font-family:Arial;background:#f2f2f2;">
 
-    <h1>🔥 Welcome to AJ Winkle Store</h1>
-    <p>Best Quality Products at Low Prices</p>
+<body>
 
-    <h2>Our Products</h2>
+<header>
+    <h1>🔥 AJ Winkle Store</h1>
+</header>
 
-    <p>📦 Magnetic Power Bank - $15</p>
-    <p>🚗 Car Gadget - $18</p>
-    <p>🏠 Home Organizer - $12</p>
+<div class="hero">
+    <h2>Best Trending Products Online</h2>
+    <p>Low Price | Fast Shipping | High Quality</p>
+    <a class="btn" href="#products">Shop Now</a>
+</div>
 
-    <h2>Contact</h2>
-    <p>WhatsApp: +92XXXXXXXXXX</p>
+<h2 style="text-align:center;">Our Products</h2>
+
+<div class="products" id="products">
+
+    <div class="card">
+        <h3>Magnetic Power Bank</h3>
+        <p>$15</p>
+    </div>
+
+    <div class="card">
+        <h3>Car Gadget</h3>
+        <p>$18</p>
+    </div>
+
+    <div class="card">
+        <h3>Home Organizer</h3>
+        <p>$12</p>
+    </div>
+
+</div>
+
+<footer>
+    <p>Contact: WhatsApp +92XXXXXXXX</p>
+</footer>
 
 </body>
 </html>
