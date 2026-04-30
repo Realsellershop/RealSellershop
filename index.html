@@ -6,9 +6,7 @@
 <title>Real Seller Shop</title>
 
 <style>
-.logo{
-    width:150px;
-}
+
 /* ===== GLOBAL ===== */
 body{
     margin:0;
@@ -17,11 +15,9 @@ body{
     color:white;
 }
 
-/* ===== SPLASH SCREEN ===== */
+/* ===== SPLASH ===== */
 #splash{
     position:fixed;
-    top:0;
-    left:0;
     width:100%;
     height:100%;
     background:#07122b;
@@ -34,60 +30,30 @@ body{
 }
 
 #splash img{
-    width:160px;
-    height:160px;
+    width:150px;
+    height:150px;
     border-radius:50%;
     border:4px solid #00bfff;
     box-shadow:0 0 20px #00bfff;
-    animation: zoomIn 1.5s ease-in-out;
+    animation: zoomIn 1.5s;
 }
 
 #splash h1{
-    margin-top:15px;
-    color:white;
-    font-size:26px;
-    letter-spacing:3px;
-    animation: glow 1.2s infinite alternate;
+    margin-top:10px;
+    animation: glow 1s infinite alternate;
 }
 
-/* ===== ANIMATIONS ===== */
 @keyframes zoomIn{
-    from{transform:scale(0);opacity:0;}
-    to{transform:scale(1);opacity:1;}
+    from{transform:scale(0);}
+    to{transform:scale(1);}
 }
 
-.typing-text{
-    font-size:28px;
-    text-align:center;
-    color:white;
-    width:0;
-    margin:auto;
-    white-space:nowrap;
-    overflow:hidden;
-    border-right:3px solid #00bfff;
-    animation: typing 3s steps(25) forwards,
-               blink 0.7s infinite;
-    letter-spacing:2px;
-}
-
-@keyframes typing{
-    from{
-        width:0;
-    }
-    to{
-        width:100%;
-    }
-}
-
-@keyframes blink{
-    50%{
-        border-color:transparent;
-    }
-};}
+@keyframes glow{
+    from{text-shadow:0 0 5px #00bfff;}
+    to{text-shadow:0 0 20px #00bfff;}
 }
 
 @keyframes hideSplash{
-    0%{opacity:1;}
     80%{opacity:1;}
     100%{opacity:0;visibility:hidden;}
 }
@@ -95,80 +61,131 @@ body{
 /* ===== HEADER ===== */
 header{
     background:#102a5c;
-    padding:15px;
     display:flex;
     justify-content:space-between;
     align-items:center;
+    padding:10px;
 }
 
-/* ===== HERO ===== */
-.hero{
-    padding:20px;
+.logo{
+    width:120px;
+}
+
+nav a{
+    margin:0 10px;
+    color:white;
+    text-decoration:none;
+}
+
+.owner{
+    color:#00bfff;
+}
+
+/* CART COUNT */
+.cart-count{
+    background:red;
+    padding:5px 10px;
+    border-radius:50%;
+}
+
+/* ===== SEARCH ===== */
+.search{
     text-align:center;
-    background:linear-gradient(90deg,#102a5c,#0b1b3a);
+    margin:10px;
+}
+
+.search input{
+    width:80%;
+    padding:10px;
+    border-radius:10px;
+    border:none;
+}
+
+/* ===== SLIDER ===== */
+.slider{
+    height:200px;
+    background-size:cover;
+    background-position:center;
+    margin:10px;
+    border-radius:15px;
+    transition:1s;
+}
+
+/* ===== CATEGORY ===== */
+.categories{
+    text-align:center;
+}
+
+.categories button{
+    margin:5px;
+    padding:8px 12px;
+    border:none;
+    border-radius:10px;
+    background:#00bfff;
+    color:white;
+    cursor:pointer;
 }
 
 /* ===== PRODUCTS ===== */
-.container{
-    width:90%;
-    margin:auto;
-}
-
 .products{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
     gap:15px;
-    margin-top:20px;
+    padding:10px;
 }
 
 .card{
     background:#102a5c;
-    padding:15px;
-    border-radius:15px;
+    padding:10px;
+    border-radius:10px;
     text-align:center;
-    transition:0.3s;
+    position:relative;
 }
 
 .card:hover{
     transform:scale(1.05);
-    background:#163a7a;
 }
 
 .card img{
     width:100%;
-    border-radius:10px;
+}
+
+/* HOT BADGE */
+.hot{
+    position:absolute;
+    top:5px;
+    left:5px;
+    background:red;
+    padding:3px 6px;
+    font-size:12px;
 }
 
 .price{
     color:#00ff88;
-    font-weight:bold;
 }
 
-button,a{
-    display:block;
-    margin-top:8px;
-    padding:8px;
-    border:none;
-    border-radius:10px;
-    cursor:pointer;
-    text-decoration:none;
-}
-
+/* BUTTONS */
 button{
-    background:#ffcc00;
+    padding:5px;
+    border:none;
+    border-radius:5px;
+    margin-top:5px;
 }
 
 .order{
+    display:block;
     background:#25D366;
     color:white;
+    text-decoration:none;
+    margin-top:5px;
+    padding:5px;
 }
 
-/* ===== CART ===== */
+/* ===== FOOTER ===== */
 footer{
     text-align:center;
-    padding:15px;
     background:#102a5c;
-    margin-top:20px;
+    padding:10px;
 }
 
 </style>
@@ -176,65 +193,105 @@ footer{
 
 <body>
 
-<!-- ===== SPLASH SCREEN ===== -->
+<!-- SPLASH -->
 <div id="splash">
-    <img src="https://raw.githubusercontent.com/Realsellershop/RealSellershop/main/WhatsApp%20Image%202026-05-01%20at%201.05.09%20AM.jpeg">
+    <img src="https://raw.githubusercontent.com/Realsellershop/RealSellershop/main/logo.jpg">
     <h1>CEO JALAL</h1>
 </div>
 
-<!-- ===== HEADER ===== -->
+<!-- HEADER -->
 <header>
     <img src="https://raw.githubusercontent.com/Realsellershop/RealSellershop/main/logo.jpg" class="logo">
-    <span>M JALAL</span>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+    </nav>
+
+    <div>
+        <span class="owner">M JALAL</span>
+        🛒 <span class="cart-count" id="count">0</span>
+    </div>
 </header>
-<!-- ===== HERO ===== -->
-<div class="hero">
-    <h2>Welcome To My Store</h2>
-    <p>APKA APNA Real Seller Shop </p>
+
+<!-- SEARCH -->
+<div class="search">
+    <input type="text" placeholder="Search..." onkeyup="search(this.value)">
 </div>
 
-<!-- ===== PRODUCTS ===== -->
-<div class="container">
+<!-- SLIDER -->
+<div class="slider" id="slider"></div>
 
-<div class="products">
+<!-- CATEGORY -->
+<div class="categories">
+    <button onclick="filter('all')">All</button>
+    <button onclick="filter('watch')">Watch</button>
+    <button onclick="filter('audio')">Audio</button>
+</div>
 
-    <div class="card">
-        <img src="https://via.placeholder.com/200">
-        <h3>Smart Watch</h3>
-        <p class="price">Rs. 2499</p>
-        <button onclick="add('Smart Watch')">Add to Cart</button>
-        <a class="order" href="https://wa.me/923195363123?text=Order Smart Watch">Order</a>
-    </div>
+<!-- PRODUCTS -->
+<div class="products" id="products">
 
-    <div class="card">
-        <img src="https://via.placeholder.com/200">
-        <h3>Headphones</h3>
-        <p class="price">Rs. 3999</p>
-        <button onclick="add('Headphones')">Add to Cart</button>
-        <a class="order" href="https://wa.me/923195363123?text=Order Headphones">Order</a>
-    </div>
+<div class="card watch">
+    <span class="hot">HOT</span>
+    <img src="https://via.placeholder.com/200">
+    <h3>Smart Watch</h3>
+    <p class="price">Rs.2499</p>
+    <button onclick="add('Watch')">Add</button>
+    <a class="order" href="#">Order</a>
+</div>
 
-    <div class="card">
-        <img src="https://via.placeholder.com/200">
-        <h3>Speaker</h3>
-        <p class="price">Rs. 1799</p>
-        <button onclick="add('Speaker')">Add to Cart</button>
-        <a class="order" href="https://wa.me/923195363123?text=Order Speaker">Order</a>
-    </div>
-
+<div class="card audio">
+    <img src="https://via.placeholder.com/200">
+    <h3>Headphones</h3>
+    <p class="price">Rs.3999</p>
+    <button onclick="add('Headphones')">Add</button>
+    <a class="order" href="#">Order</a>
 </div>
 
 </div>
 
 <footer>
-    © 2026 Real Seller Shop | M JALAL
+© Real Seller Shop | CEO JALAL
 </footer>
 
 <script>
 
-function add(product){
-    alert(product + " added to cart!");
+/* CART */
+let count=0;
+function add(){
+    count++;
+    document.getElementById("count").innerText=count;
 }
+
+/* SEARCH */
+function search(val){
+    let cards=document.querySelectorAll(".card");
+    cards.forEach(c=>{
+        c.style.display=c.innerText.toLowerCase().includes(val.toLowerCase())?"block":"none";
+    });
+}
+
+/* FILTER */
+function filter(cat){
+    let cards=document.querySelectorAll(".card");
+    cards.forEach(c=>{
+        c.style.display=(cat=="all"||c.classList.contains(cat))?"block":"none";
+    });
+}
+
+/* SLIDER */
+let imgs=[
+ "https://via.placeholder.com/800x200",
+ "https://via.placeholder.com/800x200/ff0000",
+ "https://via.placeholder.com/800x200/0000ff"
+];
+
+let i=0;
+setInterval(()=>{
+    document.getElementById("slider").style.backgroundImage=`url(${imgs[i]})`;
+    i=(i+1)%imgs.length;
+},2000);
 
 </script>
 
