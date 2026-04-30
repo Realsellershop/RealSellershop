@@ -9,39 +9,56 @@
 body{
     margin:0;
     font-family:Arial;
-    background:#f5f5f5;
+    background:#f8f8f8;
 }
 
+/* HEADER */
 header{
+    background:white;
+    padding:15px;
     text-align:center;
-    padding:20px;
-    background:#ff6a00;
-    color:white;
+    font-size:22px;
+    font-weight:bold;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
 }
 
+/* HERO */
+.hero{
+    text-align:center;
+    padding:40px 20px;
+}
+.hero h1{
+    font-size:30px;
+}
+.hero p{
+    color:gray;
+}
+
+/* OWNER */
 .owner{
     text-align:center;
-    padding:20px;
     background:white;
+    padding:20px;
 }
 .owner img{
-    width:120px;
-    height:120px;
+    width:100px;
+    height:100px;
     border-radius:50%;
 }
 
+/* PRODUCTS */
 .products{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
     gap:15px;
     padding:20px;
 }
 
 .card{
     background:white;
-    padding:10px;
     border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    padding:10px;
+    box-shadow:0 0 5px rgba(0,0,0,0.1);
     text-align:center;
 }
 
@@ -50,6 +67,7 @@ header{
 }
 
 .title{
+    font-size:14px;
     margin:10px 0;
 }
 
@@ -58,16 +76,17 @@ header{
     font-weight:bold;
 }
 
-.order-btn{
+.order{
     display:block;
     margin-top:10px;
-    padding:10px;
+    padding:8px;
     background:#25D366;
     color:white;
     text-decoration:none;
     border-radius:5px;
 }
 
+/* FOOTER */
 footer{
     text-align:center;
     padding:15px;
@@ -80,14 +99,18 @@ footer{
 <body>
 
 <header>
-    <h2>Real Seller Shop</h2>
-    <p>All Pakistan Delivery Available</p>
+    Real Seller Shop
 </header>
 
+<div class="hero">
+    <h1>Best Online Store in Pakistan</h1>
+    <p>Fast Delivery | Trusted Seller</p>
+</div>
+
 <div class="owner">
-    <img src="https://via.placeholder.com/120">
+    <img src="https://via.placeholder.com/100">
     <h3>M JALAL</h3>
-    <p>📞 +923195363123</p>
+    <p>📞 03195363123</p>
 </div>
 
 <div class="products">
@@ -96,34 +119,34 @@ footer{
         <img src="https://via.placeholder.com/200">
         <div class="title">Wireless Earbuds</div>
         <div class="price">Rs. 2,499</div>
-        <a class="order-btn" href="https://wa.me/923195363123?text=I want to order Wireless Earbuds - Rs. 2499">Order Now</a>
+        <a class="order" href="https://wa.me/923195363123?text=Order Wireless Earbuds Rs 2499">Order Now</a>
     </div>
 
     <div class="card">
         <img src="https://via.placeholder.com/200">
-        <div class="title">Mini Bluetooth Speaker</div>
-        <div class="price">Rs. 1,899</div>
-        <a class="order-btn" href="https://wa.me/923195363123?text=I want to order Mini Bluetooth Speaker - Rs. 1899">Order Now</a>
+        <div class="title">Mini Speaker</div>
+        <div class="price">Rs. 1,799</div>
+        <a class="order" href="https://wa.me/923195363123?text=Order Mini Speaker Rs 1799">Order Now</a>
     </div>
 
     <div class="card">
         <img src="https://via.placeholder.com/200">
-        <div class="title">Smart LED Bulb</div>
+        <div class="title">LED Light</div>
         <div class="price">Rs. 999</div>
-        <a class="order-btn" href="https://wa.me/923195363123?text=I want to order Smart LED Bulb - Rs. 999">Order Now</a>
+        <a class="order" href="https://wa.me/923195363123?text=Order LED Light Rs 999">Order Now</a>
     </div>
 
     <div class="card">
         <img src="https://via.placeholder.com/200">
-        <div class="title">Car Phone Holder</div>
+        <div class="title">Mobile Holder</div>
         <div class="price">Rs. 699</div>
-        <a class="order-btn" href="https://wa.me/923195363123?text=I want to order Car Phone Holder - Rs. 699">Order Now</a>
+        <a class="order" href="https://wa.me/923195363123?text=Order Mobile Holder Rs 699">Order Now</a>
     </div>
 
 </div>
 
 <footer>
-    <p>© 2026 Real Seller Shop | Owner: M JALAL</p>
+    © 2026 Real Seller Shop
 </footer>
 
 </body>
