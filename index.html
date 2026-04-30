@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AJ Winkle Store</title>
+<title>Real Seller Shop</title>
 
 <style>
 body{
@@ -12,83 +12,65 @@ body{
     background:#f5f5f5;
 }
 
-/* HEADER */
 header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 40px;
-    background:white;
-    box-shadow:0 2px 10px rgba(0,0,0,0.1);
-}
-header h1{
-    color:#e60023;
-}
-nav a{
-    margin:0 10px;
-    text-decoration:none;
-    color:black;
-}
-
-/* HERO */
-.hero{
     text-align:center;
-    padding:60px 20px;
-    background:#111;
+    padding:20px;
+    background:#ff6a00;
     color:white;
-}
-.hero h2{
-    font-size:40px;
-}
-.btn{
-    display:inline-block;
-    margin-top:20px;
-    padding:12px 25px;
-    background:#e60023;
-    color:white;
-    text-decoration:none;
-    border-radius:5px;
 }
 
-/* PRODUCTS */
+.owner{
+    text-align:center;
+    padding:20px;
+    background:white;
+}
+.owner img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+}
+
 .products{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-    padding:40px;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+    padding:20px;
 }
+
 .card{
     background:white;
-    padding:15px;
+    padding:10px;
     border-radius:10px;
     box-shadow:0 0 10px rgba(0,0,0,0.1);
     text-align:center;
 }
+
 .card img{
     width:100%;
-    border-radius:10px;
 }
-.card h3{
+
+.title{
     margin:10px 0;
 }
+
 .price{
-    color:#e60023;
+    color:#ff6a00;
     font-weight:bold;
 }
-.buy{
+
+.order-btn{
     display:block;
     margin-top:10px;
     padding:10px;
-    background:black;
+    background:#25D366;
     color:white;
     text-decoration:none;
     border-radius:5px;
 }
 
-/* FOOTER */
 footer{
     text-align:center;
-    padding:20px;
+    padding:15px;
     background:#111;
     color:white;
 }
@@ -98,47 +80,50 @@ footer{
 <body>
 
 <header>
-    <h1>AJ Winkle</h1>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#products">Shop</a>
-        <a href="#">Contact</a>
-    </nav>
+    <h2>Real Seller Shop</h2>
+    <p>All Pakistan Delivery Available</p>
 </header>
 
-<div class="hero">
-    <h2>Trending Products 2026</h2>
-    <p>Fast Shipping | Premium Quality</p>
-    <a href="#products" class="btn">Shop Now</a>
+<div class="owner">
+    <img src="https://via.placeholder.com/120">
+    <h3>M JALAL</h3>
+    <p>📞 +923195363123</p>
 </div>
 
-<div class="products" id="products">
+<div class="products">
 
     <div class="card">
-        <img src="https://via.placeholder.com/300">
-        <h3>Magnetic Power Bank</h3>
-        <p class="price">$15</p>
-        <a class="buy" href="#">Buy Now</a>
+        <img src="https://via.placeholder.com/200">
+        <div class="title">Wireless Earbuds</div>
+        <div class="price">Rs. 2,499</div>
+        <a class="order-btn" href="https://wa.me/923195363123?text=I want to order Wireless Earbuds - Rs. 2499">Order Now</a>
     </div>
 
     <div class="card">
-        <img src="https://via.placeholder.com/300">
-        <h3>Car Phone Holder</h3>
-        <p class="price">$18</p>
-        <a class="buy" href="#">Buy Now</a>
+        <img src="https://via.placeholder.com/200">
+        <div class="title">Mini Bluetooth Speaker</div>
+        <div class="price">Rs. 1,899</div>
+        <a class="order-btn" href="https://wa.me/923195363123?text=I want to order Mini Bluetooth Speaker - Rs. 1899">Order Now</a>
     </div>
 
     <div class="card">
-        <img src="https://via.placeholder.com/300">
-        <h3>LED Night Lamp</h3>
-        <p class="price">$12</p>
-        <a class="buy" href="#">Buy Now</a>
+        <img src="https://via.placeholder.com/200">
+        <div class="title">Smart LED Bulb</div>
+        <div class="price">Rs. 999</div>
+        <a class="order-btn" href="https://wa.me/923195363123?text=I want to order Smart LED Bulb - Rs. 999">Order Now</a>
+    </div>
+
+    <div class="card">
+        <img src="https://via.placeholder.com/200">
+        <div class="title">Car Phone Holder</div>
+        <div class="price">Rs. 699</div>
+        <a class="order-btn" href="https://wa.me/923195363123?text=I want to order Car Phone Holder - Rs. 699">Order Now</a>
     </div>
 
 </div>
 
 <footer>
-    <p>© 2026 AJ Winkle Store | WhatsApp: +92XXXXXXXX</p>
+    <p>© 2026 Real Seller Shop | Owner: M JALAL</p>
 </footer>
 
 </body>
