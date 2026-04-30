@@ -54,9 +54,34 @@ body{
     to{transform:scale(1);opacity:1;}
 }
 
-@keyframes glow{
-    from{text-shadow:0 0 5px #00bfff;}
-    to{text-shadow:0 0 20px #00bfff,0 0 40px #00bfff;}
+.typing-text{
+    font-size:28px;
+    text-align:center;
+    color:white;
+    width:0;
+    margin:auto;
+    white-space:nowrap;
+    overflow:hidden;
+    border-right:3px solid #00bfff;
+    animation: typing 3s steps(25) forwards,
+               blink 0.7s infinite;
+    letter-spacing:2px;
+}
+
+@keyframes typing{
+    from{
+        width:0;
+    }
+    to{
+        width:100%;
+    }
+}
+
+@keyframes blink{
+    50%{
+        border-color:transparent;
+    }
+};}
 }
 
 @keyframes hideSplash{
@@ -164,7 +189,7 @@ footer{
 <!-- ===== HERO ===== -->
 <div class="hero">
     <h2>Welcome To My Store</h2>
-    <p>High quality products at lowest prices</p>
+    <p>APKA APNA Real Seller Shop </p>
 </div>
 
 <!-- ===== PRODUCTS ===== -->
